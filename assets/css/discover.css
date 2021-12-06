@@ -1,0 +1,473 @@
+/* common star */
+.row{
+    /* margin-left: -12px;
+    margin-right: -12px; */
+}   
+.col{
+    float: left;
+    width: calc(100% / 5);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.col-thirt{
+    width: calc(100% / 3);
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.discover--margin{
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* common end */
+.discover{
+    width: calc(100% - 253px);
+    background: #140D1F;
+    position: absolute;
+    right: 0;
+    margin-top: 70px;
+    display: none;
+}
+
+.discover-wrap {
+    width: calc(100% - 24px);
+    margin: auto;
+}
+
+/* discover__content */
+.discover__content{
+    width: 1200px;
+    max-width: 100%;
+    padding-top: 26px;
+}
+.content-BXH {
+    /* margin: 0 12px; */
+}
+.BHX-box{
+    /* width: 212px; */
+    width: calc(100% / 5);
+    padding: 0 12px;
+}
+.BXH-box__body{
+    position: relative;
+    border-radius: 5px;
+    /* height: 212px; */
+    overflow: hidden;
+}
+
+.class-blur{
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.icon--layout:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.icon--opacity:hover{
+    opacity: 0.8;
+}
+
+.icon-btn{
+    padding: 6px 7px;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.play-icon{
+    font-size: 50px;
+}
+
+
+.BXH-box__body:hover img{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.BXH-box__body:hover .class-blur{
+    display: flex;
+    cursor: pointer;
+}
+
+.BXH-box__body img{
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    transform: scale(1);
+    transition: 0.7s ease;
+}
+.BXH-box__heading{
+    margin-top: 26px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #fff;
+}
+.BXH-box__footer{
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.BXH-box__footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.BXH-box__footer a:hover{
+    color: #bc5de4;
+}
+/* boxlist start */
+.content-boxList{
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.list-boxList{
+    overflow: hidden;
+}
+
+.boxList-title{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 16px;
+    margin-left: 12px;
+}
+
+.boxList-title a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.boxList-title a:hover{
+    cursor: pointer;
+    color: #bc5de4;
+}
+
+.boxlist__img{
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.boxlist__img:hover .class-blur{
+    cursor: pointer;
+    display: flex;
+}
+.boxlist__img img{
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+}
+.boxlist__titile{
+    margin-top: 8px;
+}
+.boxlist-name{
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+.boxlist-description{
+    margin-top: 8px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff80;
+}
+
+.boxlist__img img{
+    transform: scale(1);
+    transition: ease 0.5s;
+}
+
+.boxlist__img:hover img{
+    transform: scale(1.1);
+}
+/* boxlist end */
+.zingchat-list{
+    display: flex;
+    margin-top: 32px;
+    /* max-width: 100%; */
+}
+
+.zingchat{
+    /* height: 100px;
+    max-height: 100%; */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.zingchat img{
+    display: block;
+    width: 100%;
+    transition: ease 0.5s;
+}
+
+.zingchat:hover img{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* zing choice Start */
+.zingChoice-slider{
+    margin-top: 30px;
+    overflow: hidden;
+    position: relative;
+    max-height: 100vh;
+}
+
+.zingChoice-list    {
+    overflow: hidden;
+}
+
+.zingChoice {
+}
+
+.zingChoice :hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.zingChoice img{
+    width: 100%;
+}
+
+.btn-switch {
+    margin-right: 12px;
+}
+
+/* .manual-Slider-btn{
+    width: 100%;
+    position: absolute;
+    top: 50%;   
+    display: flex;
+    justify-content: space-between;
+} */
+
+.btn-slider a{
+    position: absolute;
+    cursor: pointer;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.btn-slider:hover{
+    opacity: 0.8;
+}
+
+.btn-slider .prev{
+    left: 0;
+    top: 50%;
+}
+
+.btn-slider .next{
+    right: 0;
+    top: 50%;
+}
+/* zing choice end */
+
+/* top 100 start */
+.slider-top100{
+    width: 500%;
+    display: flex;
+    transition: ease 0.5s;
+}
+
+.list-box--slider{
+    width: 20%;
+}
+
+.boxlist__titile a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.boxlist__titile a:hover{
+    cursor: pointer;
+    color: #bc5de4;
+}
+
+.boxList-header{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.btn-switch .prev{
+    color: #fff;
+    font-weight: 600;
+    margin-right: 30px;
+}
+
+.btn-switch .next{
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-switch .prev:hover,
+.btn-switch .next:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+/* top 100 end */
+/* discover footer start */
+.discover__footer {
+    margin-bottom: 90px;
+    margin-top: 40px;
+    padding: 0 96px;
+    text-align: center;
+}
+.discover-footer-title{
+    font-size: 12px;
+    color: #ffffff80;
+    letter-spacing: 1.71px;
+    margin-bottom: 27px;
+}
+.discover-footer-partner-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.discover-partner-wrap{
+    width: calc(100% / 8);
+    max-height: 67px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    
+}
+.discover-footer-partner-item{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.discover-footer-partner-item img{
+    max-width: 90%;
+    max-height: 80%;
+    width: auto;
+}
+/* discover footer end */
+
+/* slider discover new start */
+.discover__slider{
+    width: 100%;
+}
+.discover__slider-wrap{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.slider-show{
+    position: relative;
+    overflow: hidden;
+}
+.slider-show:hover .btn-show{
+    display: flex;
+}
+.slider-list{
+    display: flex;
+    width: 500%;
+    transition: ease 1s;
+}
+.slide-item{
+    display: flex;
+    width: 20%;
+}
+.slide-item-img{
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+}
+.slide-item-img img{
+    width: 100%;
+    border-radius: 5px;
+}
+.btn-prev{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    padding: 15px 12px;
+    border-radius: 0 5px 5px 0;
+    background-color: rgba(236, 236, 236,0.2);
+    z-index: 2;
+}
+.btn-next{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    padding: 15px 12px;
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(236, 236, 236,0.2);
+    z-index: 2;
+}
+.btn-prev:hover,
+.btn-next:hover{
+    cursor: pointer;
+    background-color: rgb(226, 226, 226);
+}
+.stick-dots{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    z-index: 2;
+}
+.stick-dots .stick{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.stick-dots .stick button{
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+}
+.stick-dots .stick button:hover{
+    cursor: pointer;
+}
+
+.stick--active button{
+    background-color: rgb(182, 182, 182);
+    box-shadow: 0 0 4px #fff;
+}
+/* slider discover new end */

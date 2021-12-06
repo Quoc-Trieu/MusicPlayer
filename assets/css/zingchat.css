@@ -1,0 +1,213 @@
+
+.zingchat-tab{
+    width:calc(100% - 253px);
+    position:absolute;
+    right: 0;
+    margin-top: 70px;
+    background: #140D1F;
+    display: none;
+}
+.zingchat-tab--wrap{
+    margin-top: 63px;
+    margin-left: 46px;
+    margin-right: 46px;
+    margin-bottom:130px;
+}
+.zingchat-title{
+    display: flex;
+    align-items: center;
+}
+.zingchat-title__heading{
+    color: #fff;
+    font-size:40px
+}
+.zingchat-title__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:40px;
+    margin-left: 5px;
+    width:40px;
+    height:40px;
+    color: #fff;
+    background-color: #7200a1;
+    border-radius:50%;
+}
+.zingchat-title__btn i{
+    font-size:13px;
+}
+.zingchat-title__btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.zingchat-tab__content{
+    margin-top:70px;
+}
+.zingchat-tab-list{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.zingchat-tab-list__item{
+    display: flex;
+    width:100%;
+    justify-content:space-between;
+    padding: 10px;
+    border-bottom: 1px solid #231b2e;
+    border-radius: 8px;
+}
+.zingchat-tab-list__item:hover{
+    background-color:#ffffff1a;
+}
+.zingchat-tab-list__item:hover .song-duration{
+    display: none;
+}
+.zingchat-tab-list__item:hover .wrap-blur,
+.zingchat-tab-list__item:hover .media-btn{
+    display: flex;
+}
+.media-left{
+    display: flex;
+    align-items: center;
+}
+.number-top{
+    width:60px;
+    font-size:34px;
+    font-weight: 900;
+    color:transparent;
+    -webkit-text-stroke: 1.5px #a3a0a8;
+    text-align: center;
+}
+.horical-align{
+    color: #a3a0a8;
+    font-size:25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-right: 15px;
+}
+.song-thumb{
+    width:40px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-right: 10px;
+    position: relative;
+}
+.wrap-blur{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+.song-thumb img{
+    width:100%;
+    display: block;
+}
+.song-info{
+    width: 242px;
+}
+.song-info .song-info__name{
+    font-size:16px;
+    font-weight: 400;
+    color: #fff;
+}
+.song-info__singer .singer1,
+.song-info__singer .singer2{
+    font-size:13px;
+    color: #7d7984;
+    text-decoration: none;
+}
+.comma{
+    color: #7d7984;
+    margin-left: -4px   ;
+}
+.song-info__singer .singer1:hover,
+.song-info__singer .singer2:hover{
+    cursor: pointer;
+    color: #c662ef;
+    text-decoration: underline;
+}
+.media-content{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.media-content .album-info{
+    color: #7d7984;
+    font-size:13px;
+    font-weight:500;
+    text-decoration: none;
+    width: 255px;
+}
+.media-content .album-info:hover{
+    cursor: pointer;
+    color: #c662ef;
+    text-decoration: underline
+}
+.media-right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* width:70px; */
+}
+.media-right .song-duration{
+    color: #7d7984;
+    font-size: 13px;
+    font-weight:500;
+}
+.number-top1{
+    -webkit-text-stroke: 1px #4a90e2;
+}
+.number-top2{
+    -webkit-text-stroke: 1px #50e3c2;
+}
+.number-top3{
+    -webkit-text-stroke: 1px #e35050;
+}
+.media-btn{
+    display: none;
+    color: #fff;
+}
+.media-btn i:not(:last-child){
+    margin-right: 30px;
+}
+.top100_btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content:center;
+}
+.top100_btn button{
+    padding: 10px 25px;
+    display: inline-block;
+    color: #fff;
+    border:1px solid #fff;
+    border-radius:30px;
+    font-size: 15px;
+    background-color: transparent;
+    font-weight: 500;
+}
+.top100_btn button:hover{
+    cursor: pointer;
+    background-color: #ffffff1a; 
+}
+.zingchat-tab-list__top100{
+    display: none;
+}
+.zingchat-tab-list__top100.displayBlock{
+    display: block;
+}
+.top100_btn button:last-child{
+    display: none;
+}
+.top100_btn .btn.block{
+    display: block;
+}
+.top100_btn .btn.none{
+    display: none;  
+}

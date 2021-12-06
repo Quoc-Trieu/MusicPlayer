@@ -1,0 +1,429 @@
+@media only screen  and (min-width : 1824px) {
+    .all-musicplay {
+        height:560px;
+    }
+
+/* pc */
+}
+@media (min-width: 1024px){
+    .user-info-list h2{
+        width: 350px;
+    }
+    
+}
+/* Mobile */
+@media (max-width: 46.1875em){
+    .box-search{
+        width: 100%;
+    }
+    .btn-search {
+        width: 100%;
+    }
+    .listbox-l{
+        margin-left: 12px;
+    }
+    .listbox-r{
+    margin: 0 7px 0 0;
+    
+    }
+    .listbox-l {
+        width: 300px;
+        justify-content: unset;
+    }
+    .listbox-r-icon--mobile,
+    .listbox-l .ti-arrow-left,
+    .listbox-l .ti-arrow-right{
+        display: none;
+    }
+    .user-info-list {
+        padding: 0;
+        margin: 0;
+    }
+    .navbar-top-vip,
+    .box-vip,
+    .btn-musicplay,
+    .app-bottom-left,
+    .box-nav-items,
+    .app-bottom-right,
+    .app-bottom-left-list {
+        display: none !important;
+    }
+    .app-bottom {
+        justify-content: center !important;
+    }
+    .app-bottom-center {
+        width: 100% !important;
+    }
+    .app-top-right{
+        margin-top: 70px;
+    }
+    .timemusic {
+        margin: 0 10px !important;
+    }
+    
+    .all-musicplay {
+        height: 198px !important;
+    }
+    .btn-uploadmusic {
+        width: 56px !important;
+        font-size: 8px !important;
+        margin-right: 10px !important;
+    }
+    .buttonplayall {
+        width: 72px !important;
+        font-size: 7px  !important;
+        margin-right: 5px !important;
+    }
+    .textnamemusic {
+        margin-left: 15px !important;
+        font-size:15px !important;
+        align-self: center;
+    }
+    .user-info {
+        /* margin-top: 20px; */
+        width: 100% !important;
+        height: 60% !important;
+    }
+    .user-info-list h2{
+        font-size:25px !important;
+        width: 230px !important;
+    }
+    .user-avt{
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+
+    .app-top-right_top{
+        height: 160px !important;
+    }
+    .listbox-r-icon--hiden{
+        display: none;
+    }
+    .slide-item-img:last-child{
+        display: none;
+    }
+    .col{
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    .boxlist.col {
+        padding-bottom: 12px;
+        width: calc(100% / 3);
+    }
+    .BHX-box{
+        width: calc(100% / 3);
+        padding: 0 3px;
+    }
+    .zingChoice.col {
+        width: calc(100% / 3);
+    }
+
+    .discover-partner-wrap:nth-child(7),
+    .discover-partner-wrap:nth-child(8),
+    .discover-partner-wrap:nth-child(9),
+    .discover-partner-wrap:nth-child(10),
+    .boxlist:nth-child(4),
+    .boxlist:nth-child(5),
+    .zingchat:nth-child(3),
+    .hidden,
+    .zingChoice:nth-child(4),
+    .zingChoice:nth-child(5){
+        display: none;
+    }
+
+    .col-thirt{
+        width: calc(100% / 2);
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    .slide-item-img{
+        padding: 0 3px;
+    }
+    .boxList-title{
+        margin-left: 3px;
+    }
+    .btn-prev{
+        left: 3px;
+    }
+    .btn-next{
+        right: 3px;
+    }
+
+    .discover__footer{
+        padding: 0;
+    }
+    .discover-partner-wrap{
+        width: calc(100% / 4);
+        height: 50px;
+        padding: 0 3px;
+        margin-bottom: 10px;
+    }
+    
+    .box-musicplay{
+        margin: 0 5px;
+    }
+
+    .box-music-comment{
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .user-icon{
+        font-size: 15px;
+    }
+    .cmt-user,
+    .cmt-box__user{
+        padding: 7px 10px;
+    }
+    .cmt-box__user{
+        margin-left: 5px;
+    }
+    .margin-top{
+        margin-top: 10px;
+    }
+    .cmt-box{
+        padding-top: 10px;
+
+    }
+    .btn-cmt{
+        font-size: 9px;
+    }
+    .render-cmt{
+        padding: 0 10px;
+    }
+    .cmt-box__btn{
+        margin: 0 5px;
+    }
+    .cmt-content__description,
+    .cmt-user__icon,
+    .cmt-input{
+        font-size: 14px;
+    }
+    .boxlist__img:hover .class-blur,
+    .BXH-box__body:hover .class-blur{
+        display: none;
+        cursor: pointer;
+    }
+    .discover__content{
+        padding-top: 0;
+    }
+
+    .boxList-title,
+    .BXH-box__heading{
+        font-size: 14px;
+    }
+    .boxlist-description{
+        font-size: 12px;
+    }
+    .boxlist__titile a,
+    .BXH-box__footer a,
+    .boxlist-name{
+        font-size: 13px;
+    }
+    .discover-footer-title{
+        font-size: 11px;
+    }
+    .discover__footer,
+    .zingchat-list,
+    .content-boxList{
+        margin-top: 30px;
+    }
+
+    .box-setting{
+        right: -53px;
+        width: 210px;
+    }
+    .box-setting-item{
+        font-size: 14px;
+    }
+    .zingchat-tab--wrap{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 24px !important;
+    }
+    .zingchat-title{
+        margin-left: 15px;
+    }
+    .zingchat-tab__content{
+        margin-top: 30px !important;
+    }
+    .zingchat-tab__content .zingchat-tab-list{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .zingchat-tab-list__item{
+        padding-left: 0 !important;
+    }
+    .media-left .number-top{
+        font-size: 28px;
+    }
+    .media-left .horical-align{
+        display:none;
+    }
+    .media-right,
+    .media-content{
+        display:none !important;
+    }
+    
+}
+    
+/* Taplet and mobile */
+@media (max-width:63.9375em){
+    .app-top-left{
+        width: 50px;
+    }
+    .zingchat-tab.tab-pane,
+    .discover,
+    .app-top-right_top-t,
+    .app-top-right{
+        width: calc(100% - 50px);
+    }
+    .scroll-nav{
+        display: flex;
+    }
+    .logo--small{
+        display: block;
+    }
+    .stick-dots,
+    .logo--small.logo--small-hiden{
+        display: none;
+    }
+    .app-top-left.app-top-left--open{
+        width: 200px;
+        z-index: 2;
+        /* transition: linear 0.1s; */
+    }
+    .navbar-top-text.navbar-top-text--open{
+        justify-content: unset;
+        margin-left: 30px;
+    }
+    .navbar-top-text .navbar-titile--open{
+        display: block;
+    }
+    .logo.logo--open{
+        display: block;
+    }
+    .playlist {
+        display: none;
+    }
+    .listbox-all{
+        justify-content: space-between;
+    }
+    
+    .listbox-l .ti-arrow-left,
+    .listbox-l .ti-arrow-right{
+        display: none;
+    }
+    
+    .image-musicplay {
+        display:none !important;
+    }
+    .box-music-content {
+        margin: 0 !important;
+    }
+    .navbar-top-text p {
+        display: none ;
+    }
+    .navbar-top-text {
+        margin: 0;
+        justify-content: center;
+    }
+    .logo {
+        display: none;
+    }
+    .navbar-top-vip {
+        display: none;
+    }
+    .navbar-top-vip-btn {
+        width: 70px !important;
+        font-size: 10px !important;
+        margin: 0 !important;
+        margin-top: 10px !important;
+    }
+    .navbar-top-vip {
+        margin: 0 !important;
+        height:100px !important;
+    }
+    .nav-items {
+        margin: 0 20px !important;
+    }
+    
+    
+    .box-search-list .ti-search {
+        font-size: 14px !important;
+    }
+    
+    .ti-arrow-right {
+        margin-left: 5px !important;
+    }
+    .app-top-right_top-bt {
+        justify-content: space-around !important;
+    }
+    .box-vip {
+      
+    }
+    .user-info-list{
+        padding-left: 0 !important;
+    }
+}
+/* taplet  */
+@media (min-width:46.25em) and (max-width:63.9375em){ 
+    .box-search {
+    /* width: 340px; */
+    }
+    
+    /* .scroll-nav{
+        margin-top: 500px;
+    } */
+    .btn-search {
+        width:366px !important;
+    }
+    .listbox-l {
+        width: 422px !important;
+    }
+    .box-vip,
+    .box-music-content-t,
+    .music-textname {
+        display: none !important;
+    }
+    .listbox-l .ti-arrow-left{
+        margin: 0 12px;
+    }
+    .listbox-l .ti-arrow-right{
+        margin: 0 12px;
+    }
+    .app-bottom-right-list {
+        margin-left: 40px !important;
+        margin-right: 10px !important;
+    }
+    .volum {
+        width: 40px !important;
+    }
+    .all-musicplay{
+        height: 281px !important;
+    }
+   .user-info-list {
+       padding: 0 !important; 
+       margin: 0 !important;
+   }
+   .user-info {
+       display: flex !important;
+       justify-content:center !important;
+       align-items:center !important;
+   }
+   .zingChoice:last-child,
+   .boxlist:last-child{
+    display: none;
+    }
+    .BHX-box,
+    .col{
+        width: calc(100% / 4);
+    }
+    .discover-partner-wrap{
+        width: calc(100% / 6);
+    }
+    .box-music-comment{
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
