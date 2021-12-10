@@ -1,0 +1,117 @@
+/* common start */
+.margin-bottom{
+    margin-bottom: 0;
+}
+.text-uppercase{
+    text-transform: uppercase;
+}
+.margin-t-20{
+    margin-top: 20px;
+}
+/* common end */
+.radio-tab{
+    width:calc(100% - 253px);
+    background: #140D1F;
+    position: absolute;
+    right:0;
+    margin-top: 70px;
+    display: none;
+}
+.radio-tab-wrap{
+    margin-top: 75px;
+    margin-left: 46px;
+    margin-right: 46px;
+    margin-bottom:130px;
+}
+.radio-header{
+    position: relative;
+    overflow: hidden;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.radio-header__title{
+    margin-left: 15px;
+}
+.radio-header__title h3{
+    color: #fff;
+    width:fit-content;
+}
+.radio-header__title h3:hover{
+    cursor: text;
+}
+.radio-slider-btn{
+    margin-right: 15px;
+    margin-bottom: 18px;
+    width:57px;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+}
+.radio-slider-btn i{
+    font-size: 18px;
+    color: #fff;
+}
+.radio-slider-btn i:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.radio-slider-list{
+    overflow: hidden;
+    display:flex;
+    width: 500%;
+    transition: ease 0.5s;
+}
+.radio-slider-item{
+    width: 10%;
+    
+}
+.radio-slider-item__img{
+    margin: 0 15px;
+    border-radius:5px;
+    overflow: hidden;
+}
+.radio-slider-item img{
+    display: block;
+    width:100%;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.radio-slider-item:hover img{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.radio-content{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.boxlist.col:hover{
+    cursor: pointer;
+}
+.boxlist-title-heading{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;   
+    margin-left: 12px; 
+}
+.boxList-title-sub{
+    color: #6b6773;
+    font-size:14px;
+    margin-left: 12px;
+    text-transform: uppercase;
+}
+.boxlist-title-img{
+    width:50px;
+    max-width: 100%;
+    border-radius:4px;
+    overflow:hidden;
+}
+.boxlist-title-img:hover img{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.boxlist-title-img img{
+    width: 100%;
+    display: block;
+    transform: scale(1);
+    transition: ease 0.5s;
+}

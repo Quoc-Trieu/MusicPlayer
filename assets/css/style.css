@@ -5,6 +5,9 @@
     user-select: none;
   
 }
+:root{
+    --logo-size: 36px;
+}
 /*begin common */
 html {
     font-family: sans-serif;
@@ -72,41 +75,46 @@ html {
 .logo-title{
     display: flex;
 }
+
+.logo-title:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
 .logo-title p:nth-child(1){
     color: #009ddc;
     -webkit-text-stroke: 2px #fff;
-    font-size: 43px;
+    font-size: var(--logo-size);
     font-weight: 800;
 }
 .logo-title p:nth-child(2){
     color: #49a942;
     -webkit-text-stroke: 2px #fff;
-    font-size: 43px;
+    font-size: var(--logo-size);
     font-weight: 800;
 }
 .logo-title p:nth-child(3){
     color: #f5832e;
     -webkit-text-stroke: 2px #fff;
-    font-size: 43px;
+    font-size: var(--logo-size);
     font-weight: 800;
 }
 .logo-title p:nth-child(4){
     color: #ee2b74;
     -webkit-text-stroke: 2px #fff;
-    font-size: 43px;
+    font-size: var(--logo-size);
     font-weight: 800;
 }
 .logo-title p:nth-child(5){
     color: #ffdb00;
     -webkit-text-stroke: 2px #fff;
-    font-size: 43px;
+    font-size: var(--logo-size);
     font-weight: 800;
 }
 .logo-title__sub{
-    padding-top: 18px;
+    padding-top: 13px;
     line-height:36px;
     margin-left: 5px;
-    font-size: 25px;
+    font-size: 21px;
     color: #fff;
     font-weight: 400;
 }

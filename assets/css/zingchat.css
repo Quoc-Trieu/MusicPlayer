@@ -68,6 +68,7 @@
 .media-left{
     display: flex;
     align-items: center;
+    width: 100%;
 }
 .number-top{
     width:60px;
@@ -108,12 +109,15 @@
     display: block;
 }
 .song-info{
-    width: 242px;
+    width: 50%;
 }
 .song-info .song-info__name{
     font-size:16px;
     font-weight: 400;
     color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .song-info__singer .singer1,
 .song-info__singer .singer2{

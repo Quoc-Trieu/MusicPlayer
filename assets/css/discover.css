@@ -140,7 +140,7 @@
     font-size: 20px;
     color: #fff;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     margin-left: 12px;
 }
 
@@ -176,6 +176,10 @@
     font-size: 14px;
     font-weight: 600;
     color: #fff;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .boxlist-description{
     margin-top: 8px;

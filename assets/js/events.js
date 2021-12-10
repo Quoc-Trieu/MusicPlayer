@@ -236,13 +236,13 @@ function slider(){
             this.classList.add('stick--active');
             slider_list.style.transform = transform[index];
             counts = index;
-            i = index;
+            // i = index;
         });
     })
 
     function nextslider() {
         counts++;
-        i=counts;
+        // i=counts;
         if(counts > 3){
             counts = 0;
         }
@@ -257,7 +257,7 @@ function slider(){
     
     btn_prev.addEventListener('click',function(){
         counts--;
-        i=counts;   
+        // i=counts;   
         if(counts < 0){
             counts = 3;
         }
@@ -326,3 +326,34 @@ function setting(){
     })
 }
 setting();
+
+// handle when click slider
+function handleSlider(){
+    var prev = document.querySelector('.radio-slider-btn .prev-btn');
+    var next = document.querySelector('.radio-slider-btn .next-btn');
+    var radiolist = document.querySelector('.radio-slider-list');
+    var item = document.querySelectorAll('.radio-slider-item').length;
+    
+    var i=0;
+    var translateX = [
+        'translateX(0)',
+        'translateX(-10%)',
+    ];
+
+    next.addEventListener('click',function(e){
+        i++
+        if(i+1 == item){
+            i=0
+        }
+        radiolist.style.transform = translateX[i];
+    })
+
+    prev.addEventListener('click',function(){
+        i--
+        if(i<0){
+            i=item-2
+        }
+        radiolist.style.transform = translateX[i];
+    })
+}
+handleSlider();
