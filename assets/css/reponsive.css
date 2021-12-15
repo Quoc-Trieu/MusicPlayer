@@ -264,7 +264,34 @@
     .media-content{
         display:none !important;
     }
-    
+    .radio-tab .radio-tab-wrap{
+        margin-top: 20px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .radio-slider-list .radio-slider-item{
+        width:20%;
+    }
+    .radio-header .radio-slider-btn,
+    .radio-header .radio-header__title{
+        display: none;
+    }
+    .radio-slider-item .radio-slider-item__img{
+        margin:0 3px
+    }
+    .content-boxList .boxlist-title-heading{
+        margin-left: 3px;
+    }
+    .boxList-title.margin-left {
+        margin-left: 12px;
+    }
+    .btn-slider a{
+        width:25px;
+        height:25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
     
 /* Taplet and mobile */
@@ -302,7 +329,7 @@
         display: block;
     }
     .logo.logo--open{
-        display: block;
+        display: flex;
     }
     .playlist {
         display: none;

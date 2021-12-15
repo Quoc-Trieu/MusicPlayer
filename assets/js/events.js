@@ -357,3 +357,5 @@ function handleSlider(){
     })
 }
 handleSlider();
+
+
