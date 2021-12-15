@@ -65,13 +65,11 @@
         height: 198px !important;
     }
     .btn-uploadmusic {
-        width: 56px !important;
-        font-size: 8px !important;
-        margin-right: 10px !important;
+        display: none !important;
     }
     .buttonplayall {
-        width: 72px !important;
-        font-size: 7px  !important;
+        width: 105px !important;
+        font-size: 10px  !important;
         margin-right: 5px !important;
     }
     .textnamemusic {
@@ -291,6 +289,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .cmt-content__title,
+    .text-musics h5{
+        font-size: 15px;
+    }
+    .cmt-rep,
+    .buttonplayall i{
+        font-size:14px;
+    }
+    .text-musics p {
+        font-size: 14px;
+        margin-bottom: 3px;
     }
 }
     
