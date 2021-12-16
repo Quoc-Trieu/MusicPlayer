@@ -129,12 +129,6 @@ tabNav.forEach((tab,index) => {
                         path: './assets/list-music/Levitating.mp3.mp3',
                         image:'./assets/img(2)/Levitating.jpg'
                     },
-                    {
-                        name: 'Đau Ở Đây Này',
-                        singer: 'Nal',
-                        path: './assets/list-music/dauodaynay.mp3',
-                        image:'./assets/img(2)/dauoday.jpg'
-                    },
                     
         ],
         render: function() {
