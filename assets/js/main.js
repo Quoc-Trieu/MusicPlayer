@@ -161,7 +161,6 @@ tabNav.forEach((tab,index) => {
              </div>
                `
             })
-            tracks.innerHTML = htmls.join('')
             playList.innerHTML = htmls.join('')
         },
         defineProperties: function() {
