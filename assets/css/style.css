@@ -1042,6 +1042,17 @@ html {
 .btn-musicplay i:hover {
     cursor: pointer;
 }
+.btn-musicplay .option,
+.btn-musicplay .mic,
+.btn-musicplay .heart{
+    padding: 6px;
+    border-radius: 50px;
+}
+.btn-musicplay .option:hover,
+.btn-musicplay .mic:hover,
+.btn-musicplay .heart:hover{
+    background-color: #423a4b;
+}
 .text-musics {
     display: flex;
     flex-direction: column;
@@ -1245,6 +1256,87 @@ li + li {
 }
 /*end comment */
 
-
-
-
+/* option song */
+.option-song{
+    width:280px;
+    position: fixed;
+    right: 127px;
+    top: 162px;
+    background-color: #432275;
+    padding:15px;
+    border-radius: 7px;
+    z-index: 9999;
+    display:none;
+}
+.option-song-info{
+    display: flex;
+}
+.thumb-song{
+    width:40px;
+    height:40px;
+    border-radius:6px;
+    overflow: hidden;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+.thumb-song img{
+    height:100%;
+    width: 100%;
+}
+.song-name a{
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+.song-name:hover a{
+    color: #c662ef;
+}
+.singer-name a{
+    font-size: 14px;
+    color: #9384b2;
+    margin-top: 5px;
+    text-decoration: none;
+}
+.singer-name:hover a{
+    color: #c662ef;
+    text-decoration: underline;
+}
+.option-chose-list{
+    border-radius:7px;
+    margin-bottom: 15px;
+    display:flex;
+    background-color: #563983;
+}
+.option-chose-item{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    border-radius:7px;
+    width: 100%;
+    padding: 10px;
+}
+.option-chose-item:hover{
+    background-color: #ffffff1a;
+    cursor: pointer;
+}
+.option-chose-item span{
+    font-size: 12px;
+    color: #f3f1f6;
+    margin-top: 5px;
+}
+.option-chose-item i{
+    color: #f3f1f6;
+}
+.option-chose-other-item{
+    color: #c8d2d5;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.option-chose-other-item:hover{
+    background-color: #ffffff1a;
+    cursor: pointer;
+}

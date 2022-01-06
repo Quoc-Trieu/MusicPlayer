@@ -1,0 +1,214 @@
+.follow-tab{
+    width:calc(100% - 253px);
+    position:absolute;
+    right: 0;
+    margin-top: 70px;
+    margin-bottom: 130px;
+    background: #140D1F;
+    display: none;
+}
+.follow-tab-wrap{
+    margin-left: 59px;
+    margin-right: 59px;
+    margin-bottom:130px;
+}
+.follow-tabs{
+    margin-top: 30px;
+    display: block;
+    width: 610px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px;
+    border-radius:50px;
+    background-color:#2f2739;
+}
+.follow-tab-item{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0;
+    color: #b9bbae;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 50px;
+    padding:5px 30px;
+}
+.follow-tab-item:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.follow-tab-item.active{
+    background-color: #6e6875;
+    color: #fff;
+}
+.follow-tab-content{
+    margin-top: 40px;
+}
+.follow-tab-pane{
+    display: none;
+}
+.follow-tab-pane.active{
+    display: block;
+}
+.follow-tab-vietnam{
+
+}
+.slider-singer-wrap{
+    overflow: hidden;
+    position: relative;
+}
+.slider-singer{
+    width:500%;
+    display: flex;
+    transition: ease 0.8s;
+}
+.slider-singer-list{
+    display: flex;
+    width: 20%;
+}
+.slider-singer-item{
+    padding: 12px;
+    width: calc(100% / 7);
+}
+.slider-singer-item:hover img{
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px #ff8800)
+}
+.slider-singer-item img{
+    width: 100%;
+    margin: 10px 0;
+}
+.singer-lider-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color:#fff;
+    width:40px;
+    height:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+.singer-lider-btn:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+.singer-lider-btn i{
+    font-size:18px;
+}
+.singer-lider-btn.prev{
+    left: 0;
+}
+.singer-lider-btn.next{
+    right: 0;
+}
+.blog-content{
+    margin-top:40px;
+    margin-bottom: 130px;
+    display: flex;
+}
+.blog-content-list{
+    width:calc(100% / 3);
+}
+.blog-content-list:not(:last-child){
+    margin-right: 15px;
+}
+.blog-content-item{
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius:8px;
+    background-color: #2f2739;
+}
+.blog-content-header{
+    margin-bottom: 10px;
+}
+.blog-content-header-info{
+    display: flex;
+}
+.blog-content-header-info__left{
+    width:40px;
+    height:40px;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.blog-content-header-info__left:hover img{
+    transform: scale(1.1);
+    cursor:pointer;
+}
+.blog-content-header-info__left img{
+    display: block;
+    width: 100%;
+    transition: ease 0.5s;
+    transform: scale(1)
+}
+.blog-content-header-info__right{
+    
+}
+.blog-content-header-info-right-top{
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+}
+.blog-follow-btn,
+.blog-user-name a{
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+.blog-content-header-info-right-bttom:hover a,
+.blog-user-name:hover a{
+    color: #c662ef;
+    cursor: pointer;
+}
+.blog-follow-btn:hover{
+    color: #dadada;
+    cursor: pointer;
+}
+.blog-content-header-info-right-top i{
+    font-size:5px;
+    color: #fff;
+    margin: 0 10px;
+}
+
+.blog-content-header-info-right-bttom a{
+    font-size: 13px;
+    color: #ffffff80;
+    text-decoration: none;
+}
+.blog-content-header-caption{
+    margin-top: 8px;
+    cursor: text;
+}
+.blog-content-header-caption{
+    font-size: 15px;
+    color: #fff;
+}
+.blog-content-main{
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.blog-content-main:hover{
+    cursor: pointer;
+}
+.blog-content-main.small{
+    height: 394px;
+}
+.blog-content-main img{
+    width: 100%;
+    display: block;
+}
+.blog-content-bottom i{
+    font-size:18px;
+    color: #fff;
+    margin-right: 30px;
+}
+.blog-content-bottom:hover i{
+    cursor: pointer;
+    opacity: 0.8;
+}

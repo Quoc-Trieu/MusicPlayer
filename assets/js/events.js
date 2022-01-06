@@ -125,7 +125,7 @@ var dislike = (id)=>{
 // }, 5000);
 
 // slider zing choise
-        var imageno = 1;
+        var imageno = 0;
         displaying(imageno);
 
         function nextimg(n){
@@ -138,11 +138,11 @@ var dislike = (id)=>{
             var i;
             var listChoice = document.getElementsByClassName('zingChoice-list');
             
-            if(n > listChoice.length){
-                imageno = 1;
+            if(n >= listChoice.length){
+                imageno = 0;
             }
 
-            if(n < 1){
+            if(n < 0){
                 imageno = listChoice.length;
             }
 
@@ -150,14 +150,14 @@ var dislike = (id)=>{
                 listChoice[i].style.display = 'none';
             }
 
-            listChoice[imageno - 1].style.display = 'block';
+            listChoice[imageno].style.display = 'block';
 
         }
 
 // boxlist slider
 
 function sliderBoxlist (){
-        var boxlist_slider = document.querySelector('.slider-top100');
+    var boxlist_slider = document.querySelector('.slider-top100');
     var items = document.querySelectorAll('.list-box--slider').length;
     var prev = document.querySelector('.btn-switch .prev');
     var next = document.querySelector('.btn-switch .next');
@@ -251,8 +251,9 @@ function slider(){
         slider_list.style.transform = transform[counts];
     }
     
-    btn_next.addEventListener('click',function(){
+    btn_next.addEventListener('click',function(e){
         nextslider();
+        e.stopPropagation();
     })
     
     btn_prev.addEventListener('click',function(){
@@ -358,4 +359,56 @@ function handleSlider(){
 }
 handleSlider();
 
+// handle slider for tab follow 
+function followSlider(){
+    const sliderSinger = document.querySelector('.slider-singer');
+    const nextbtn = document.querySelector('.singer-lider-btn.next');
+    const prevbtn = document.querySelector('.singer-lider-btn.prev');
+    const singerlistLength = document.querySelectorAll('.slider-singer-list').length;
+    
+    let i = 0;
+    const transform = [
+        'translateX(0)',
+        'translateX(-20%)',
+    ]
 
+    nextbtn.addEventListener('click',(e)=>{
+        i++
+        if(i >= singerlistLength){
+            i = 0;
+        }
+        sliderSinger.style.transform = transform[i];
+        e.stopPropagation()
+    })
+    prevbtn.addEventListener('click',()=>{
+        i--
+        if(i < 0){
+            i = singerlistLength - 1;
+        }
+        sliderSinger.style.transform = transform[i];
+    })
+
+    setInterval(function(){
+        nextbtn.click();
+    },5000)
+}
+
+followSlider();
+
+// handle event click tab ui follow tab
+function followTabUi(){
+    const followTabItem = document.querySelectorAll('.follow-tab-item');
+    const followTabPane = document.querySelectorAll('.follow-tab-pane');
+
+    followTabItem.forEach(function(item,index){
+        item.addEventListener('click',function(){
+            // open
+            document.querySelector('.follow-tab-item.active').classList.remove('active');
+            document.querySelector('.follow-tab-pane.active').classList.remove('active');
+            // close
+            this.classList.add('active');
+            followTabPane[index].classList.add('active');
+        })
+    })
+}
+followTabUi();
