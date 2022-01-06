@@ -1340,3 +1340,69 @@ li + li {
     background-color: #ffffff1a;
     cursor: pointer;
 }
+/* toast */
+#toast{
+    position: fixed;
+    top: 75px;
+    right:32px;
+}
+#toast .toast{
+    width:400px;
+    background-color: #fff;
+    border-left: 5px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    border-radius:6px;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0,0.08);
+    transition: all 0.3s linear;
+}
+.toast + .toast{
+    margin-top:16px
+}
+@keyframes slide-right {
+    from {
+        opacity: 0;
+        transform:translateX(calc(100% + 32px))
+    }
+    to {
+        opacity: 1;
+        transform:translateX(0)
+    }
+}
+@keyframes fade-out{
+    to{
+        opacity: 0;
+    }
+}
+.toast .toast-body{
+    flex: 1;
+    font-size: 16px;
+}
+.toast-body .toast-body__title{
+    margin-bottom: 6px;
+    font-weight: 800;
+    color: #2a2f37;
+}
+.toast-body .toast-body__mess{
+    font-size: 16px;
+    color: #a9aaae;
+}
+.toast .toast__icon{
+    margin-right: 15px;
+}
+.toast .toast__close:hover{
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+.toast__icon i,
+.toast__close i{
+    font-size: 20px;
+}
+#toast .toast--info{
+    border-color: #047cc4;
+}
+.toast--info .toast__icon i{
+    color: #047cc4;
+}

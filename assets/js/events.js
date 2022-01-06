@@ -412,3 +412,48 @@ function followTabUi(){
     })
 }
 followTabUi();
+// toast
+function handleToast(){
+    function toast({type,title,mess,duration}){
+        const main = document.getElementById('toast');
+        const toast = document.createElement('div');
+        const delay = (duration/1000).toFixed(2);
+        if(main){
+            toast.classList.add('toast',`toast--${type}`);
+            toast.style.animation = `slide-right ease 0.3s,fade-out linear 1s ${delay}s forwards`;
+            toast.innerHTML = 
+                `<div class="toast__icon"><i class="fas fa-bell"></i></div>
+                <div class="toast-body">
+                    <div class="toast-body__title">${title}</div>
+                    <div class="toast-body__mess">${mess}</div>
+                    </div>
+                <div class="toast__close"><i class="fas fa-times-circle"></i></div>`;
+
+            main.appendChild(toast)
+            // auto remove toast
+            const remove = setTimeout(function(){
+                main.removeChild(toast)
+            },duration + 1000)
+            // remove toast when click 
+            toast.addEventListener('click',function(e){
+                if(e.target.closest('.toast__close')){
+                    main.removeChild(toast)
+                }
+                clearTimeout(remove);
+            })
+        }
+        
+    }
+    const items = document.querySelectorAll('.notification');
+        items.forEach(function(item){
+            item.addEventListener('click',function(){
+                toast(
+                    {   type:'info',
+                        title:'Thông báo',
+                        mess:'Chức năng hiện chưa được hoàn thiện',
+                        duration: 5000
+                    });
+            })
+        })
+}
+handleToast();
