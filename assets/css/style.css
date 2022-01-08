@@ -876,6 +876,9 @@ html {
     background: #2F2739;
     padding-bottom: 30px;
 }
+.box-music-upload-list.love{
+    display:none;
+}
 .box-music-upload-list-icon {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -1009,6 +1012,7 @@ html {
 .texts-infomusic:hover {
     cursor: pointer;
 }
+.box-music,
 .box-musicplay {
     display: flex;
     justify-content: space-between;
@@ -1017,6 +1021,7 @@ html {
     margin: 0 20px;
     margin-top: 5px;
 }
+.box-music:hover,
 .box-musicplay.active4,
 .box-musicplay:hover {
     background: #2F2739;
@@ -1039,16 +1044,19 @@ html {
     margin-right: 10px;
     color: #696372;
 }
+.btn-musicplay .heart.active{
+    color: #7200a1;
+}
 .btn-musicplay i:hover {
     cursor: pointer;
 }
-.btn-musicplay .option,
+.btn-musicplay .more,
 .btn-musicplay .mic,
 .btn-musicplay .heart{
     padding: 6px;
     border-radius: 50px;
 }
-.btn-musicplay .option:hover,
+.btn-musicplay .more:hover,
 .btn-musicplay .mic:hover,
 .btn-musicplay .heart:hover{
     background-color: #423a4b;
@@ -1405,4 +1413,20 @@ li + li {
 }
 .toast--info .toast__icon i{
     color: #047cc4;
+}
+.playlist-love{
+    overflow: hidden;
+    overflow-y: scroll;
+    color: #fff;
+}
+.playlist-love::-webkit-scrollbar{
+    width: 4px;
+    z-index: 2;
+}
+.playlist-love::-webkit-scrollbar-thumb {
+    background-color: #5b5364;
+    border-radius:10px;
+}
+.playlist-love::-webkit-scrollbar-button {
+    height: 5px;
 }

@@ -26,6 +26,7 @@ const loopBtn = $('.music-icon .ti-loop')
 const playList = $$('.all-musicplay')
 const tracks = $('#tracks')
 const icon = $('.allicon')
+const playlistLove = $('.box-music-upload.playlist-love')
 
 tabNav.forEach((tab,index) => {
     const tabList = tabLists[index]
@@ -144,6 +145,8 @@ tabNav.forEach((tab,index) => {
                     },
                     
         ],
+        love:[
+        ],
         render: function() {
             
             const htmls = this.songs.map((song,index) => {
@@ -166,10 +169,10 @@ tabNav.forEach((tab,index) => {
                          <p></p>
                      </div>
                  </div>
-                 <div class="btn-musicplay">
+                 <div class="btn-musicplay option">
                      <i class="ti-microphone-alt mic"></i>
-                     <i class="ti-heart heart"></i>
-                     <i class="ti-more-alt option" data-index="${index}" data-songName="${song.name}" data-singer="${song.singer}" data-img="${song.image}" data-link="${song.link}"></i>
+                     <i class="fas fa-heart heart" value="like" data-index="${index}" data-songName="${song.name}" data-singer="${song.singer}" data-img="${song.image}" data-path="${song.path}" data-link="${song.link}"></i>
+                     <i class="ti-more-alt more" data-index="${index}" data-songName="${song.name}" data-singer="${song.singer}" data-img="${song.image}" data-path="${song.path}" data-link="${song.link}"></i>
                      
                  </div>
              </div>
@@ -178,6 +181,39 @@ tabNav.forEach((tab,index) => {
             playList.forEach(function(list,index){
                 list.innerHTML = htmls.join('');
             })
+        },
+        renderLovesong: function(){
+
+                const htmls = this.love.map((love,index) => {
+                    return `
+                    <div class="box-musicplay ${index === this.currentIndex ? 'active4': ''}" data-index = "${index}">
+                    <!-- Song -->
+                    <div class="info-musicplay">
+                        <div class="texts-infomusic">
+                            <div class="imgmn-music" style="background-image: url('${love.image}')">
+                               <div class="hoverplay">
+                                   <i class="fas fa-play"></i>
+                               </div>
+                            </div>
+                            <div class="text-musics">
+                                <h5 class="song">${love.songName}</h5>
+                                <p class="author">${love.singerName}</p>
+                            </div>
+                        </div>
+                        <div class="time-musicplay" id="${index}">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="btn-musicplay">
+                        <i class="ti-microphone-alt mic"></i>
+                        <i class="fas fa-heart heart active" value="unlike" data-index="${index}" data-songName="${love.songName}" data-singer="${love.singerName}" data-img="${love.image}" data-path="${love.path}" data-link="${love.link}"></i>
+                        <i class="ti-more-alt option" data-index="${index}" data-songName="${love.songName}" data-singer="${love.singerName}" data-img="${love.image}" data-path="${love.path}" data-link="${love.link}"></i>
+                        
+                    </div>
+                </div>
+                  `
+               })
+                playlistLove.innerHTML = htmls.join('');
         },
         defineProperties: function() {
             Object.defineProperty(this, 'currentSong', {
@@ -329,7 +365,10 @@ tabNav.forEach((tab,index) => {
                 list.onclick = function(e) {
                     e.stopPropagation();
                     const songNode = e.target.closest('.box-musicplay:not(.active4)')
-                    const optionNode = e.target.closest('.option')
+                    const optionNode = e.target.closest('.option')   
+                    const menuNode = e.target.closest('.ti-more-alt.more');
+                    const heartBtn = e.target.closest('.fas.fa-heart.heart')
+
                     if( songNode || optionNode){
                             if(songNode && !optionNode) {
                                 _this.currentIndex = Number(songNode.dataset.index)
@@ -339,27 +378,64 @@ tabNav.forEach((tab,index) => {
                                 _this.loadDurationSong(_this.songs)
                             }
                             if(optionNode) {
-                                console.log([optionNode])
-                                var image = optionNode.dataset.img;
-                                var songName = optionNode.dataset.songname;
-                                var singerName = optionNode.dataset.singer;
-                                var link = optionNode.dataset.link;
+                                if(menuNode){
+                                    var image = menuNode.dataset.img;
+                                    var songName = menuNode.dataset.songname;
+                                    var singerName = menuNode.dataset.singer;
+                                    var path = menuNode.dataset.path;
+                                    var link = menuNode.dataset.link;
+                                    var index = menuNode.dataset.index;
 
-                                // set with cho option khi click nào option node
-                                // var offsetTop_option = optionNode.offsetTop;
-                                // document.querySelector('.option-song').style.top = offsetTop_option - 285 + 'px';
+                                    document.querySelector('.title-song .song-name a').innerText = songName;
+                                    document.querySelector('.title-song .singer-name a').innerText = singerName;
+                                    document.querySelector('.option-song-info .thumb-song img').setAttribute('src', image)
+                                    if(link == 'undefined') {
+                                        document.querySelector('.option-chose-list .option-chose-item').setAttribute('href', '')
+                                    }else{
+                                        document.querySelector('.option-chose-list .option-chose-item').setAttribute('href', link)
+                                    }
 
-                                document.querySelector('.title-song .song-name a').innerText = songName;
-                                document.querySelector('.title-song .singer-name a').innerText = singerName;
-                                document.querySelector('.option-song-info .thumb-song img').setAttribute('src', image)
-                                if(link == 'undefined') {
-                                    document.querySelector('.option-chose-list .option-chose-item').setAttribute('href', '')
+                                    document.querySelector('.option-song').style.display = 'block';
+                                    e.stopPropagation();
+                                    }
+                            }
+                            if(heartBtn){
+                                var image = heartBtn.dataset.img;
+                                var songName = heartBtn.dataset.songname;
+                                var singerName = heartBtn.dataset.singer;
+                                var path = heartBtn.dataset.path;
+                                var link = heartBtn.dataset.link;
+                                var index = heartBtn.dataset.index;
+
+                                var listArray = {
+                                    image,
+                                    songName,
+                                    singerName,
+                                    path,
+                                    link
+                                };
+
+                                // xử lý like & unlike song 
+                                if(heartBtn.getAttribute('value') == 'like'){
+                                    heartBtn.classList.add('active');
+                                    heartBtn.setAttribute('value','unlike');
+
+                                    app.love.push(listArray);
+                                    alert('Bạn đã thêm bài hát vào danh sách yêu thích');
+                                    app.renderLovesong();
                                 }else{
-                                    document.querySelector('.option-chose-list .option-chose-item').setAttribute('href', link)
+                                    heartBtn.classList.remove('active');
+                                    heartBtn.setAttribute('value','like');
+
+                                    var songUnlike = app.love.filter(function(song){
+                                        return song.songName != songName;
+                                    })
+                                    app.love = songUnlike;
+                                    alert('Bạn đã xoá bài hát ra khỏi danh sách yêu thích');
+                                    app.renderLovesong();
+                                    
                                 }
 
-                                document.querySelector('.option-song').style.display = 'block';
-                                e.stopPropagation();
                             }
                     }
                 }
@@ -374,7 +450,6 @@ tabNav.forEach((tab,index) => {
                     e.stopPropagation();
                 })
             })
-
             // xử lí loop song
             loopBtn.onclick = function(e) {
                 _this.isLoop = !_this.isLoop
@@ -467,9 +542,23 @@ tabNav.forEach((tab,index) => {
             
             // render playlist
             this.render()
+            this.renderLovesong()
             this.loadDurationSong(this.songs)
         }
     }
     app.start()
 
-            
+
+
+
+
+    // const array = [2, 5, 9];
+
+    // const index = array.indexOf(9);
+    // console.log(index)
+    // if (index > -1) {
+    // array.splice(index, 1);
+    // }
+
+    // // array = [2, 9]
+    // console.log(array); 
