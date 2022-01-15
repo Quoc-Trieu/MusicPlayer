@@ -1,15 +1,16 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBBR3IMhnZ1WbD1B9jWP9guMsRUsIdyPmQ",
-    authDomain: "musicplayer-50d5f.firebaseapp.com",
-    projectId: "musicplayer-50d5f",
-    storageBucket: "musicplayer-50d5f.appspot.com",
-    messagingSenderId: "934715282667",
-    appId: "1:934715282667:web:11776c485a16e98d8a9aae",
-    measurementId: "G-B603GB9VJ6"
+    apiKey: "AIzaSyDUMwRbUn7K5qRWWUOxc8D9dK_zAS6C6GU",
+    authDomain: "datasong-e2355.firebaseapp.com",
+    databaseURL: "https://datasong-e2355-default-rtdb.firebaseio.com",
+    projectId: "datasong-e2355",
+    storageBucket: "datasong-e2355.appspot.com",
+    messagingSenderId: "515922194967",
+    appId: "1:515922194967:web:d3539cc25d2eaf1c86e252",
+    measurementId: "G-NPCEL0SY30"
   };
 
 firebase.initializeApp(firebaseConfig)
-var db = firebase.firestore();
+var db = firebase.firestore();  
 
 //delete comment
 function deletecmt(cmtID){
@@ -35,8 +36,7 @@ function renderUsers(comments){
                             <h4 class="cmt-content__title">NIKE</h4>
                             <p class="cmt-content__description">${comment.content}</p>
                             <div class="fell">
-                                <i class="fas fa-thumbs-up icon-like btn-like" onclick="like(${index})">
-                                </i>
+                                <i class="fas fa-thumbs-up icon-like btn-like" onclick="like(${index})"></i>
                                 <i class="fas fa-thumbs-down icon-disLike btn-dislike" onclick="dislike(${index})"></i>
                                 <p class="cmt-rep"> Phản hồi</p>
                             </div>
@@ -310,13 +310,21 @@ function navbar(){
 navbar();
 // open & close nav end
 
-// open & close setting
+// open & close setting,upload
 function setting(){
+    var uploadBtn = document.querySelector('.btn-uploadmusic');
+    var modal = document.querySelector('#modal');
+    var closeBtn = document.querySelector('.closeBtn');
+    var modal_container = document.querySelector('.modal-container');
+
     var setting_btn = document.querySelector('.btn--settings');
     // open
     setting_btn.addEventListener('click',(e)=>{
         e.stopPropagation();
         document.querySelector('.box-setting').classList.toggle('open');
+    })
+    uploadBtn.addEventListener('click',()=>{
+        modal.style.display = 'flex'
     })
     // close
     document.addEventListener('click',function(){
@@ -325,6 +333,17 @@ function setting(){
     document.querySelector('.box-setting').addEventListener('click',function(e){
         e.stopPropagation();
     })
+
+    closeBtn.addEventListener('click',()=>{
+        modal.style.display = 'none';
+    })
+    modal.addEventListener('click',()=>{
+        modal.style.display = 'none';
+    })
+    modal_container.addEventListener('click', e =>{
+        e.stopPropagation();
+    })
+    
 }
 setting();
 
@@ -457,3 +476,18 @@ function handleToast(){
         })
 }
 handleToast();
+
+
+
+// const app = function(callback) {
+//     setTimeout(function(){
+//         console.log('1')
+//         callback();
+//     },5000)
+// }
+
+// const callback = function(){
+//     console.log('2')
+// }
+
+// app(callback)

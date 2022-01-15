@@ -28,6 +28,19 @@ const tracks = $('#tracks')
 const icon = $('.allicon')
 const playlistLove = $('.box-music-upload.playlist-love')
 
+// firebase
+    var reader = new FileReader();  
+    var files = [];
+    var SongName,SingerName,SongUrl;
+
+    var namebox = $('.name.box');
+    var singerbox = $('.singer.box');
+    var mysong = $('.audioSong');
+    var upprogress = $('.upprogress');
+    var selSongbtn = $('.selectSongbtn');
+    var upbtn = $('.upBtn');
+    var downbtn = $('.downbtn');
+
 tabNav.forEach((tab,index) => {
     const tabList = tabLists[index]
     tab.onclick = function() {
@@ -49,6 +62,89 @@ tabNav.forEach((tab,index) => {
         setConfig: function(key,value) {
             this.config[key] = value;
             localStorage.setItem(PLAYER_STORAGE_KEY,JSON.stringify(this.config))
+        },
+        firebase: function() {
+            //   select song
+            selSongbtn.onclick = function(e){
+                var input = document.createElement('input');
+                input.type = 'file';
+    
+                input.onchange = e =>{
+                    files = e.target.files;
+                    reader.onload = function() {
+                        mysong.src = reader.result;
+                    }
+                    reader.readAsDataURL(files[0]);
+                }
+                input.click();
+            }
+            // upload to firebase
+        upbtn.onclick = function(){
+            SongName = namebox.value;
+            SingerName = singerbox.value;
+            var uploadtask = firebase.storage().ref('listSong/'+SongName+'.mp3').put(files[0]);
+        
+            uploadtask.on('state_changed', function(snapshot) {
+                    var progress = ((snapshot.bytesTransferred / snapshot.totalBytes) * 100).toFixed(0);
+                    upprogress.innerHTML = "upload " + progress + "%";
+            },
+
+            function(error) {
+                alert('error in saving the song');
+            },
+
+            function(){
+                uploadtask.snapshot.ref.getDownloadURL().then(function(url){
+                    SongUrl = url;
+
+                    var addFirebase = firebase.database().ref('Songs/'+SongName);
+                    addFirebase.set({
+                        name: SongName,
+                        singer: SingerName,
+                        path: SongUrl,
+                    });
+                alert('Đã tải lên 1 file')
+                }
+            );
+
+        });
+        }
+        
+        },
+        readFirebase: function() {
+            // read data from firebase
+            var readFirebase = firebase.database().ref('Songs/');
+            readFirebase.on('value', function(snapshot){
+                var appSongs = app.songs
+                var array = [];
+                var listSong = [];
+                var newlistSong = [];
+                var snap = snapshot.val();
+                for(var i in snap){
+                    array.push(i);
+                }
+                array.forEach(function(item){
+                    listSong.push(snap[item]);
+                })
+                var lastlist = listSong.map(function(item){
+                  var newlist = appSongs.filter(function(song){
+                        return song.name == item.name
+                    })
+                    return newlist;
+                })
+                lastlist.forEach(function(item){
+                    if(item.length > 0){
+                        var index = array.indexOf(item[0].name);
+                        array.splice(index,1)
+                    }
+                })
+                array.forEach(function(item){
+                    newlistSong.push(snap[item]);
+                })
+                appSongs.push(...newlistSong)
+                console.log(newlistSong)
+                app.render();
+            })
         },
         songs: 
         [
@@ -155,7 +251,7 @@ tabNav.forEach((tab,index) => {
                  <!-- Song -->
                  <div class="info-musicplay">
                      <div class="texts-infomusic">
-                         <div class="imgmn-music" style="background-image: url('${song.image}')">
+                         <div class="imgmn-music" style="background-image: url('${song.image ? song.image : song.image  = 'https://photo-zmp3.zadn.vn/audio_default.png'}')">
                             <div class="hoverplay">
                                 <i class="fas fa-play"></i>
                             </div>
@@ -421,7 +517,6 @@ tabNav.forEach((tab,index) => {
                                     heartBtn.setAttribute('value','unlike');
 
                                     app.love.push(listArray);
-                                    alert('Bạn đã thêm bài hát vào danh sách yêu thích');
                                     app.renderLovesong();
                                 }else{
                                     heartBtn.classList.remove('active');
@@ -431,7 +526,6 @@ tabNav.forEach((tab,index) => {
                                         return song.songName != songName;
                                     })
                                     app.love = songUnlike;
-                                    alert('Bạn đã xoá bài hát ra khỏi danh sách yêu thích');
                                     app.renderLovesong();
                                     
                                 }
@@ -510,7 +604,7 @@ tabNav.forEach((tab,index) => {
         },
         prevSong: function() {
             this.currentIndex--
-            if(this.currentIndex <= 0  ){
+            if(this.currentIndex < 0  ){
                 this.currentIndex = this.songs.length - 1 
             }
             this.loadCurrentSong()
@@ -530,6 +624,10 @@ tabNav.forEach((tab,index) => {
         start: function() {
             // gán cấu hình từ config vào ứng dụng
             this.loadconfig()
+
+            // firebase
+            this.readFirebase();
+            this.firebase()
 
             // định nghĩa thuộc tính object
             this.defineProperties()
@@ -562,3 +660,13 @@ tabNav.forEach((tab,index) => {
 
     // // array = [2, 9]
     // console.log(array); 
+
+
+
+
+
+
+
+
+
+    
