@@ -445,8 +445,7 @@
     .listbox-l {
         width: 422px !important;
     }
-    .box-vip,
-    .music-textname {
+    .box-vip {
         display: none !important;
     }
     .listbox-l .ti-arrow-left{

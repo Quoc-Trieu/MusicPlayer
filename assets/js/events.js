@@ -477,17 +477,40 @@ function handleToast(){
 }
 handleToast();
 
+// countdown
+function countdown(){
+    /*Lấy thời gian tết âm lịch (mily giây)*/
+    var tetAmLich = new Date(2022, 1, 2, 0, 0, 0).getTime();
+    
+    function newYear() {
+        /*Lấy thời gian ngày hiện tại (mily giây) */
+        var ngayHienTai = new Date().getTime();
 
+        /*Tính thời gian còn lại (mily giây) */
+        thoigianConLai = tetAmLich - ngayHienTai;
 
-// const app = function(callback) {
-//     setTimeout(function(){
-//         console.log('1')
-//         callback();
-//     },5000)
-// }
+        /*Chuyển đơn vị thời gian tương ứng sang mili giây*/
+        var giay = 1000;
+        var phut = giay * 60;
+        var gio = phut * 60;
+        var ngay = gio * 24;
 
-// const callback = function(){
-//     console.log('2')
-// }
+        /*Tìm ra thời gian theo ngày, giờ, phút giây còn lại thông qua cách chia lấy dư(%) và làm tròn số(Math.floor) trong Javascript*/
+        var d = Math.floor(thoigianConLai / (ngay));
+        var h = Math.floor((thoigianConLai % (ngay)) / (gio));
+        var m = Math.floor((thoigianConLai % (gio)) / (phut));
+        var s = Math.floor((thoigianConLai % (phut)) / (giay));
 
-// app(callback)
+        /*Hiển thị kết quả ra các thẻ Div với ID tương ứng*/
+        document.getElementById("day").innerText = d;
+        document.getElementById("hour").innerText = h;
+        document.getElementById("minute").innerText = m;
+        document.getElementById("second").innerText = s;
+    }
+
+    /*Thiết Lập hàm sẽ tự động chạy lại sau 1s*/
+    setInterval(function () {
+        newYear()
+    }, 1000)
+}
+countdown();
